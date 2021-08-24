@@ -1,3 +1,5 @@
+library(ggplot2)
+
 
 ###### EINZELN #######
 rm(list=ls())
@@ -18,12 +20,14 @@ View <- 'H'  ##############
 # Jetzt wird eingelesen
 #Liste mit Probanden erzeugen
 (list=ls())
-setwd("C:/Users/jakob/Dropbox/ich/21_LfE/05_Dissertation/Versuche/VR Back-Off/Back-Off_VR_Neuauswertung/06_Rohdaten/")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # Change WD to directory of sourcefile
+setwd("06_Rohdaten")
 ListVP <- list.files()
 
 
 # BackOffs der ausgewählten Probanden aus jedem Trial in Liste schreiben
-  setwd(paste("C:/Users/jakob/Dropbox/ich/21_LfE/05_Dissertation/Versuche/VR Back-Off/Back-Off_VR_Neuauswertung/06_Rohdaten/",ListVP[VP], sep=''))
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # Change WD to directory of sourcefile
+  setwd(paste("06_Rohdaten/",ListVP[VP], sep=''))
 # Eingewöhnung (Level1)  
   ListStandardBO <- list.files(pattern = "Level1")
   standardBO <- read.delim(ListStandardBO[1])
@@ -160,12 +164,14 @@ for (VP in 1:50)
             # Jetzt wird eingelesen
             #Liste mit Probanden erzeugen
             (list=ls())
-            setwd("C:/Users/jakob/Dropbox/ich/21_LfE/05_Dissertation/Versuche/VR Back-Off/Back-Off_VR_Neuauswertung/06_Rohdaten/")
+            setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # Change WD to directory of sourcefile
+            setwd(paste("06_Rohdaten/",alld[i], sep=''))
             ListVP <- list.files()
             
             
             # BackOffs der ausgewählten Probanden aus jedem Trial in Liste schreiben
-            setwd(paste("C:/Users/jakob/Dropbox/ich/21_LfE/05_Dissertation/Versuche/VR Back-Off/Back-Off_VR_Neuauswertung/06_Rohdaten/",ListVP[VP], sep=''))
+            setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # Change WD to directory of sourcefile
+            setwd(paste("06_Rohdaten/",alld[i], sep=''))
             # Die BackOffs aus den Einstelltrials
             if(View == 'V')
             {ListAllBOView<- list.files(pattern = "V_backoff")}
@@ -269,7 +275,7 @@ for (VP in 1:50)
 data$Botime[152] <- NaN # BOtime von 0s ist unmöglich
 
 # BOtime speichern
-setwd("C:/Users/jakob/Dropbox/ich/21_LfE/05_Dissertation/Versuche/VR Back-Off/Back-Off_VR_Neuauswertung/")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # Change WD to directory of sourcefile
 write.csv(data, file = "BotimeFromDistanceAndSpeed.csv")
 
   
