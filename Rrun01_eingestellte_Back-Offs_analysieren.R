@@ -165,13 +165,13 @@ for (VP in 1:50)
             #Liste mit Probanden erzeugen
             (list=ls())
             setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # Change WD to directory of sourcefile
-            setwd(paste("06_Rohdaten/",alld[i], sep=''))
+            setwd(paste("06_Rohdaten/"))
             ListVP <- list.files()
             
             
             # BackOffs der ausgewählten Probanden aus jedem Trial in Liste schreiben
             setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # Change WD to directory of sourcefile
-            setwd(paste("06_Rohdaten/",alld[i], sep=''))
+            setwd(paste("06_Rohdaten/",ListVP[VP], sep=''))
             # Die BackOffs aus den Einstelltrials
             if(View == 'V')
             {ListAllBOView<- list.files(pattern = "V_backoff")}
