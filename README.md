@@ -12,7 +12,7 @@ The analysis is performed in R
 -----------------
 ## File description
 
-- Rrun01_einlesen+modell.R : Data Wrangling to contain a DataFrame which contains all information necessary for statistical Analysis. Statitstical Analysis for the experimental design, linear mixed-models and explorative plots and plots for the publication.
+- Rrun01_einlesen+modell.R : Data Wrangling to get a DataFrame which contains all information necessary for statistical analysis. Statitstical analysis for the experimental design, linear mixed-models and explorative plots and plots for the publication.
 
 - Rrun01_eingestellte_Back-Offs_analysieren.R : Additional explorative Analysis of Back-off motions, designed by the participants.
 
